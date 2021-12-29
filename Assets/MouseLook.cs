@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity =100f ; // velocità del mouse 
+    public float mouseSensitivity =130f ; // velocità del mouse 
 
     float xRotation = 0f ; 
 
     public Transform playerBody ; //Prende da inspector un oggetto che vogliamo collegare 
     void Start()
     {
-        Cursor.lockState= CursorLockMode.Locked ;
+        Cursor.lockState = CursorLockMode.Locked ;
     }
 
     // Update is called once per frame
