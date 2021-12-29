@@ -7,7 +7,11 @@ public class ArmaScript : MonoBehaviour
     public float damage= 10f ;
     public float range = 100f ;
 
+    public float FireRate =15f;    
     public Camera fpsCam;
+
+    public GameObject Impact ; 
+
     
     public ParticleSystem muzzleFlash ;
     IEnumerator Ritardo()
@@ -17,10 +21,14 @@ public class ArmaScript : MonoBehaviour
                 Shoot();
     }
     }
+
+    private float RateoFuoco = 0f ;
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) 
+        if (Input.GetButton("Fire1")&& Time.time >= RateoFuoco)  
         {
+            RateoFuoco = Time.time + 1f / FireRate ; 
             StartCoroutine(Ritardo());
         }
     }
@@ -41,6 +49,10 @@ public class ArmaScript : MonoBehaviour
                {
                    target.takedmg(damage) ;
                }
+
+               GameObject ImpatctGun= Instantiate(Impact,hit.point,Quaternion.LookRotation(hit.normal)) ;
+
+               Destroy(ImpatctGun,1f) ;
             }
     }
 }
