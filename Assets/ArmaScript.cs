@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 
 public class ArmaScript : MonoBehaviour
@@ -9,16 +10,24 @@ public class ArmaScript : MonoBehaviour
     public Camera fpsCam;
     
     public ParticleSystem muzzleFlash ;
+    IEnumerator Ritardo()
+    {
+    {
+        yield return new WaitForSeconds(.1f);
+                Shoot();
+    }
+    }
     void Update()
     {
         if (Input.GetButtonDown("Fire1")) 
         {
-            Shoot();
+            StartCoroutine(Ritardo());
         }
     }
 
     void Shoot()
     {       
+        
             muzzleFlash.Play();
             RaycastHit hit;
 
