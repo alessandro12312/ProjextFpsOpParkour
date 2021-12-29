@@ -14,13 +14,6 @@ public class ArmaScript : MonoBehaviour
 
     
     public ParticleSystem muzzleFlash ;
-    IEnumerator Ritardo()
-    {
-    {
-        yield return new WaitForSeconds(.1f);
-                Shoot();
-    }
-    }
 
     private float RateoFuoco = 0f ;
 
@@ -28,8 +21,8 @@ public class ArmaScript : MonoBehaviour
     {
         if (Input.GetButton("Fire1")&& Time.time >= RateoFuoco)  
         {
-            RateoFuoco = Time.time + 1f / FireRate ; 
-            StartCoroutine(Ritardo());
+            RateoFuoco = Time.time + 1f / FireRate ; //Messo il fuoco rapido 
+            Shoot();
         }
     }
 
