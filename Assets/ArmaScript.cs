@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ArmaScript : MonoBehaviour
 {
+    public bool FireType= true ;
     public float damage= 10f ;
     public float range = 100f ;
 
@@ -19,10 +20,32 @@ public class ArmaScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Fire1")&& Time.time >= RateoFuoco)  
+        if (Input.GetKeyDown(KeyCode.B) && FireType == true) 
         {
-            RateoFuoco = Time.time + 1f / FireRate ; //Messo il fuoco rapido 
-            Shoot();
+            FireType = false ; 
+        } 
+
+        else if (Input.GetKeyDown(KeyCode.B) && FireType == false) 
+        {
+            FireType = true ; 
+        } 
+
+        if (FireType == false)
+        {
+            if (Input.GetButton("Fire1")&& Time.time >= RateoFuoco)  
+            {
+                RateoFuoco = Time.time + 1f / FireRate ; //Messo il fuoco rapido 
+                Shoot();
+                Debug.Log(FireType);
+            }
+        }
+        if (FireType == true) 
+        {
+            if(Input.GetButtonDown("Fire1"))
+            {
+                Shoot();  
+                 Debug.Log(FireType);          //FuocoSingolo 
+            }
         }
     }
 
