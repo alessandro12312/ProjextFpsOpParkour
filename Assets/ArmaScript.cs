@@ -39,6 +39,7 @@ public class ArmaScript : MonoBehaviour
                 {
                     RateoFuoco = Time.time + 1f / FireRate; //Messo il fuoco rapido 
                     Shoot();
+                    Debug.Log(Magazine);
                 }
             }
             if (FireType == true)
@@ -47,12 +48,14 @@ public class ArmaScript : MonoBehaviour
                 {
                     Shoot();
                     //FuocoSingolo 
+                    Debug.Log(Magazine);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Reload();
-            }
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+
         }
     }
 
