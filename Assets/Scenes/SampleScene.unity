@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18348
+  m_Name: pb_Mesh18358
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -334,26 +334,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
   m_PrefabInstance: {fileID: 518092476}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &185832464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 185832462}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78a511234418e0844b474eb1ce2188de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Magazine: 30
-  FireType: 1
-  damage: 10
-  range: 100
-  FireRate: 15
-  fpsCam: {fileID: 1901033125}
-  Impact: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
-  muzzleFlash: {fileID: 172025120}
 --- !u!114 &185832465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,8 +346,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe37b7ded1c25df44ab459847249b3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
   Impact: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
-  Bullet: {fileID: 4390901270400570913, guid: 5349ba174a96d7b4fb39dd9b5af2fee1, type: 3}
+  Bullet: {fileID: 862738387641697496, guid: 38109d2cbc2d63a48a311ea91508256b, type: 3}
   shootForce: 300
   upwareForce: 0
   TimeShooting: 0.1
@@ -382,6 +363,22 @@ MonoBehaviour:
   muzzleFlash: {fileID: 172025120}
   ammunitionDisplay: {fileID: 0}
   allowInvoke: 1
+--- !u!114 &185832466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185832462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63d71560c10e473ebc409185edd2c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderLeft: 0
+  borderRight: 0
+  borderTop: 0
+  borderBottom: 0
 --- !u!1001 &210317112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -703,6 +700,38 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 81b320e4d5bd96c42a9c8e1411ea4a4b, type: 2}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64272386
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000052356498
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000062406606
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.76609796
+      objectReference: {fileID: 0}
+    - target: {fileID: 6602035741573159798, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -100.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6619996868211589657, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

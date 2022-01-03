@@ -4,6 +4,7 @@ using TMPro;
 
 public class ArmaMigliorata : MonoBehaviour
 {
+    public int damage = 10;
     public GameObject Impact;
     //Proiettile 
     public GameObject Bullet;
@@ -80,27 +81,37 @@ public class ArmaMigliorata : MonoBehaviour
         Vector3 targetPoint;
         Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-
+        GameObject Proiettile = Instantiate(Bullet, attackPoint.position, Quaternion.identity);
         if (Physics.Raycast(ray, out hit))
         {
             targetPoint = hit.point;
+            Target target = hit.transform.GetComponent<Target>();
+
+            if (target != null)
+            {
+                Destroy(Proiettile, 0.3f);
+                target.takedmg(damage);
+            }
         }
         else
+        {
             targetPoint = ray.GetPoint(75);
-
+            Destroy(Proiettile, 4f);
+        }
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
         Vector3 DirectionNoSpray = targetPoint - attackPoint.position;
         Vector3 DirezioneSpray = DirectionNoSpray + new Vector3(x, y, 0);
 
-        GameObject Proiettile = Instantiate(Bullet, attackPoint.position, Quaternion.identity);
 
         Proiettile.transform.forward = DirezioneSpray.normalized;
 
         Proiettile.GetComponent<Rigidbody>().AddForce(DirezioneSpray.normalized * shootForce, ForceMode.Impulse);
         Proiettile.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwareForce, ForceMode.Impulse);
         GameObject ImpatctGun = Instantiate(Impact, hit.point, Quaternion.LookRotation(hit.normal));
+
+        Destroy(Proiettile, 1f);
 
         if (allowInvoke)
         {
