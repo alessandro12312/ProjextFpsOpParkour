@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18324
+  m_Name: pb_Mesh18348
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -341,7 +341,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 185832462}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78a511234418e0844b474eb1ce2188de, type: 3}
   m_Name: 
@@ -354,6 +354,34 @@ MonoBehaviour:
   fpsCam: {fileID: 1901033125}
   Impact: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
   muzzleFlash: {fileID: 172025120}
+--- !u!114 &185832465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185832462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe37b7ded1c25df44ab459847249b3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Impact: {fileID: 1000010355441670, guid: 02a509a7fa70ed740ba4197e20c5d32d, type: 3}
+  Bullet: {fileID: 4390901270400570913, guid: 5349ba174a96d7b4fb39dd9b5af2fee1, type: 3}
+  shootForce: 300
+  upwareForce: 0
+  TimeShooting: 0.1
+  spread: 3
+  reloadTime: 1.5
+  TimeShoots: 0
+  SpazioCaricatore: 100
+  ColpiPerPressione: 1
+  MantieniPremuto: 1
+  fpsCam: {fileID: 1901033125}
+  attackPoint: {fileID: 681172347}
+  muzzleFlash: {fileID: 172025120}
+  ammunitionDisplay: {fileID: 0}
+  allowInvoke: 1
 --- !u!1001 &210317112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,7 +456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d1df3e6b307931348b844cb812f53012, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1df3e6b307931348b844cb812f53012, type: 3}
       propertyPath: m_LocalPosition.x
@@ -681,6 +709,36 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 81b320e4d5bd96c42a9c8e1411ea4a4b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+--- !u!1 &681172346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 681172347}
+  m_Layer: 0
+  m_Name: PuntoDiSparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &681172347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681172346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0003, y: 0.0219, z: 0.0928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 185832463}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,7 +1323,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6faac3554f4e7874bae130c8d40b49a4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6faac3554f4e7874bae130c8d40b49a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1657,6 +1715,27 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1965226931 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -167717597401359640, guid: 494de3d0d626ce74db5c08171655d294, type: 3}
+  m_PrefabInstance: {fileID: 518092476}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1965226935
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965226931}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1001 &1970111146
 PrefabInstance:
   m_ObjectHideFlags: 0
